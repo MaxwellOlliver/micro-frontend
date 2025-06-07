@@ -1,0 +1,16 @@
+{
+  "name": "microfrontend-architecture",
+  "version": "1.0.0",
+  "description": "Micro Frontend Architecture",
+  "scripts": {
+    "dev": "pnpm --filter shell dev",
+    "build": "pnpm --filter shell build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.11.1",
+  "devDependencies": {
+    "@module-federation/vite": "^1.4.1"
+  }
+}

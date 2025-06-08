@@ -9,7 +9,7 @@ export default defineConfig({
     federation({
       dev: true,
       filename: "remoteEntry.js",
-      name: "dashboard",
+      name: "users",
       exposes: {
         "./exports": "./src/exports.ts",
       },
@@ -22,7 +22,7 @@ export default defineConfig({
     }),
   ],
   server: {
-    port: 5001,
+    port: 5002,
   },
   build: {
     target: "esnext",

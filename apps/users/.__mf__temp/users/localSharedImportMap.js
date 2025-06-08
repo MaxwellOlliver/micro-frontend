@@ -4,7 +4,7 @@
     const importMap = {
       
         "react": async () => {
-          let pkg = await import("__mf__virtual/dashboard__prebuild__react__prebuild__.js")
+          let pkg = await import("__mf__virtual/users__prebuild__react__prebuild__.js")
           return pkg
         }
       
@@ -16,7 +16,7 @@
             version: "19.1.0",
             scope: ["default"],
             loaded: false,
-            from: "dashboard",
+            from: "users",
             async get () {
               usedShared["react"].loaded = true
               const {"react": pkgDynamicImport} = importMap 

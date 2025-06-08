@@ -177,3 +177,7 @@ declare module "dashboard/*" {
   export default Component;
 }
 ```
+
+### Adding libraries
+
+Run `pnpm add @shared/router@workspace:*`

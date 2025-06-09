@@ -31,6 +31,13 @@ export default defineConfig({
 					requiredVersion: pkg.dependencies.react,
 					singleton: true,
 				},
+				"react-dom": {
+					requiredVersion: pkg.dependencies["react-dom"],
+					singleton: true,
+				},
+				"@shared/router": {
+          singleton: true,
+        },
 			},
     }),
   ],

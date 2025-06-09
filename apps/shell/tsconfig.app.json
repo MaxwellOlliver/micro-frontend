@@ -28,7 +28,12 @@
     "typeRoots": [
       "src/decls",
       "node_modules/@types"
-    ]
+    ],
+    "paths": {
+      "dashboard/exports": [
+        "../dashboard/src/exports.ts"
+      ]
+    }
   },
   "include": [
     "src"

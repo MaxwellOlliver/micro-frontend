@@ -1,9 +1,14 @@
-import { createRouter } from "@tanstack/react-router";
+import { createBrowserRouter, Outlet } from "react-router";
 import { getRemoteRoutes } from "../remote-route-trees";
-import { RootRoute } from "@shared/router";
 
-const remoteRoutes = await getRemoteRoutes();
-console.log(remoteRoutes);
-const routeTree = RootRoute.addChildren(remoteRoutes);
+export async function createAppRouter() {
+  const remoteRoutes = await getRemoteRoutes();
 
-export const router = createRouter({ routeTree });
+  return createBrowserRouter([
+    {
+      path: "/",
+      element: <Outlet />,
+      children: remoteRoutes,
+    },
+  ]);
+}

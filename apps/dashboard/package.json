@@ -7,14 +7,15 @@
     "dev": "rsbuild dev  --port 5001",
     "build": "rsbuild build",
     "lint": "eslint .",
-    "preview": "rsbuild preview --port 5001"
+    "preview": "serve -s dist -l 5001"
   },
   "dependencies": {
+    "@module-federation/enhanced": "^0.15.0",
     "@moondev/ui": "workspace:^",
     "@rslib/core": "^0.9.2",
+    "@tanstack/react-router": "^1.120.20",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-router": "^7.6.2",
     "tailwindcss": "4.1.8"
   },
   "devDependencies": {

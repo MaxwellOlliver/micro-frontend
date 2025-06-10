@@ -4,12 +4,16 @@ import { pluginModuleFederation } from "@module-federation/rsbuild-plugin";
 import moduleFederationConfig from "./module-federation.config";
 
 export default defineConfig({
-  plugins: [pluginReact(), pluginModuleFederation(moduleFederationConfig)],
+  plugins: [
+    pluginReact({
+      splitChunks: {
+        router: false,
+        react: false,
+      },
+    }),
+    pluginModuleFederation(moduleFederationConfig),
+  ],
   server: {
     port: 5001,
-  },
-  output: {
-    target: "web",
-    minify: false,
   },
 });

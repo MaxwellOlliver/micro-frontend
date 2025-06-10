@@ -1,23 +1,29 @@
-import { StrictMode } from "react";
+import { StrictMode, Suspense } from "react";
 import { createRoot } from "react-dom/client";
-import { createAppRouter } from "./routes/router";
-import { RouterProvider } from "react-router";
+import { RouterProvider, createRouter } from "@tanstack/react-router";
+import { routeTree } from "./routeTree.gen";
+
+declare module "@tanstack/react-router" {
+  interface Register {
+    Root: typeof routeTree;
+  }
+}
 
 async function startApp() {
   // await import("@moondev/ui/theme").catch((err) => {
   //   console.error("Error loading theme", err);
   // });
 
-  const router = await createAppRouter();
-
-  if (!router) {
-    throw new Error("Router not found");
-  }
+  const router = createRouter({
+    routeTree,
+  });
 
   createRoot(document.getElementById("root")!).render(
     <StrictMode>
       <h1 className="text-2xl font-bold text-purple-600">Shell</h1>
-      <RouterProvider router={router} />
+      <Suspense fallback={<div>Loading.. asdasd.</div>}>
+        <RouterProvider router={router} />
+      </Suspense>
     </StrictMode>
   );
 }

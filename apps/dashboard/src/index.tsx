@@ -1,1 +1,1 @@
-import("./self-host");
+import("./bootstrap");

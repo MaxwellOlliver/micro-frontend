@@ -62,7 +62,7 @@ Go to `apps/dashboard` and update `vite.config.ts`:
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { federation } from "@module-federation/vite";
-import pkg from "./package.json" with { type: "json" };
+import pkg from "./package.json";
 
 export default defineConfig({
   plugins: [
@@ -108,33 +108,33 @@ export default function DashboardPage() {
 Update `vite.config.ts` to:
 
 ```typescript
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-import {federation} from '@module-federation/vite';
-import pkg from "./package.json" with { type: "json" };
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import { federation } from "@module-federation/vite";
+import pkg from "./package.json";
 
 export default defineConfig({
   plugins: [
     react(),
     federation({
-      name: 'shell',
+      name: "shell",
       dev: true,
-			remotes: {
-				dashboard: {
-					type: 'module',
-					name: 'dashboard',
-					entry: 'http://localhost:5001/remoteEntry.js',
-					entryGlobalName: 'dashboard',
-					shareScope: 'default',
-				},
-			},
-			filename: 'remoteEntry.js',
-			shared: {
-				react: {
-					requiredVersion: pkg.dependencies.react,
-					singleton: true,
-				},
-			},
+      remotes: {
+        dashboard: {
+          type: "module",
+          name: "dashboard",
+          entry: "http://localhost:5001/remoteEntry.js",
+          entryGlobalName: "dashboard",
+          shareScope: "default",
+        },
+      },
+      filename: "remoteEntry.js",
+      shared: {
+        react: {
+          requiredVersion: pkg.dependencies.react,
+          singleton: true,
+        },
+      },
     }),
   ],
   server: {
@@ -146,7 +146,6 @@ export default defineConfig({
     cssCodeSplit: false,
   },
 });
-
 ```
 
 Update `App.tsx`to load the Dashboard MFE:

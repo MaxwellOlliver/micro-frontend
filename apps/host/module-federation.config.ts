@@ -7,6 +7,7 @@ export default createModuleFederationConfig({
     dashboard: "dashboard@http://localhost:5001/remoteEntry.js",
     users: "users@http://localhost:5002/remoteEntry.js",
   },
+  shareStrategy: "loaded-first",
   shared: {
     ...packageJson.dependencies,
     react: { singleton: true, requiredVersion: packageJson.dependencies.react },

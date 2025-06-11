@@ -22,4 +22,7 @@ export default defineConfig({
       plugins: [TanStackRouterRspack({ target: "react" })],
     },
   },
+  html: {
+    title: "Micro Frontends",
+  },
 });

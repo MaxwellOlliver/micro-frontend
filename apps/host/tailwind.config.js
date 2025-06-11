@@ -1,1 +1,11 @@
-// Tailwind CSS v4 - configuration is handled via CSS @theme directive
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./apps/*/src/**/*.{ts,tsx,html}",
+    "./packages/ui/src/**/*.{ts,tsx,html}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};

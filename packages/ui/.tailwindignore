@@ -1,0 +1,14 @@
+node_modules/
+dist/
+build/
+.git/
+*.min.js
+*.min.css
+coverage/
+.next/
+.cache/
+.vscode/
+.idea/
+*.log
+.DS_Store
+*.map 

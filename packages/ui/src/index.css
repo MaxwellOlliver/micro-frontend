@@ -2,12 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+html {
+  background: linear-gradient(62deg, #ff8336 0%, #fd2d92 100%);
+  font-family: "Poppins", sans-serif;
+  @apply text-gray-700;
+}
+
 .layout {
   display: grid;
-  grid-template-columns: 200px calc(100vw - 200px);
-  grid-template-rows: 50px calc(100vh - 50px);
+  grid-template-columns: 250px minmax(0, 1fr);
+  grid-template-rows: 100dvh;
   grid-template-areas:
-    "sidebar navbar"
+    "sidebar content"
     "sidebar content";
 }
 
@@ -17,8 +25,24 @@
 
 .navbar {
   grid-area: navbar;
+  border-radius: 0.8rem 0.8rem 0 0;
+  background-color: #ffffff;
+  
+}
+
+.main {
+  grid-area: main;
+  border-radius: 0 0 0.8rem 0.8rem;
+  background-color: #ffffff;
+  height: 100%;
 }
 
 .content {
   grid-area: content;
+  display: grid;
+  grid-template-rows:80px minmax(0, 1fr);
+  grid-template-areas:
+    "navbar"
+    "main";
+
 }

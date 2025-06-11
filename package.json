@@ -6,7 +6,8 @@
     "dev": "pnpm -r dev",
     "build": "pnpm build:css:prod && pnpm -r build",
     "build:css": "pnpm --filter @moondev/ui build:css",
-    "build:css:prod": "pnpm --filter @moondev/ui build:css:prod"
+    "build:css:prod": "pnpm --filter @moondev/ui build:css:prod",
+    "build:css:fast": "pnpm --filter @moondev/ui build:css:fast"
   },
   "keywords": [],
   "author": "Maxwell Macedo",

@@ -1,15 +1,9 @@
-import { Card } from "@moondev/ui/components";
-
 export const RegistrationPage = () => {
   return (
-    <div className="flex flex-col items-center justify-center h-full gap-4">
-      <h1 className="text-2xl font-bold text-yellow-600">User Registration</h1>
-      <Card title="Registration Form" className="max-w-md">
-        <p>Welcome! Please fill out the form below to register.</p>
-        <div className="mt-4 bg-blue-500 text-white px-4 py-2 rounded text-center">
-          Sign Up Button
-        </div>
-      </Card>
+    <div className="flex flex-col h-full gap-4 p-4 items-center justify-center">
+      <h1 className="text-4xl font-bold bg-gradient-to-r from-[#ff8336] to-[#fd2d92] bg-clip-text text-transparent mb-2">
+        Users registration page here!!
+      </h1>
     </div>
   );
 };

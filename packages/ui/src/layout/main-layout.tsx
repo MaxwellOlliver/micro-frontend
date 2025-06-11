@@ -10,8 +10,10 @@ export function MainLayout({ sidebar, navbar, children }: MainLayoutProps) {
   return (
     <div className="layout w-screen h-dvh">
       {sidebar}
-      {navbar}
-      <div className="content">{children}</div>
+      <div className="content p-2">
+        {navbar}
+        <div className="main overflow-y-auto p-4">{children}</div>
+      </div>
     </div>
   );
 }

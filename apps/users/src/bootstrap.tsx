@@ -3,8 +3,8 @@ import { createRoot } from "react-dom/client";
 import { App } from "./app";
 
 async function startApp() {
-  await import("@moondev/ui/theme").catch((err) => {
-    console.error("Error loading theme", err);
+  await import("@moondev/ui/styles").catch((err) => {
+    console.error("Error loading styles", err);
   });
 
   createRoot(document.getElementById("root")!).render(
